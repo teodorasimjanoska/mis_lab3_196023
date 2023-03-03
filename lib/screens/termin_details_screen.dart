@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lab3_mis_196023/model/Termin.dart';
+import 'package:lab3_mis_196023/model/termin.dart';
 
 class TerminDetailsScreen extends StatelessWidget {
 

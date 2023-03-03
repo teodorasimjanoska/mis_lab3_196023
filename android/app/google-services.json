@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "794448737124",
+    "project_id": "lab4-mis-196023",
+    "storage_bucket": "lab4-mis-196023.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:794448737124:android:51e5e7112d8053f6a38071",
+        "android_client_info": {
+          "package_name": "mk.ukim.finki.lab3_mis_196023"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "794448737124-i082eeit9i68jhdjiqvcm5jkgj8bbm0i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBL_1lBYeC3WPRGPsmgACfF1iKE9ztL6HY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "794448737124-i082eeit9i68jhdjiqvcm5jkgj8bbm0i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "794448737124-poqfafi73olrhmk8f2fnvo56rv5334sj.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "mk.ukim.finki.lab3Mis196023"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

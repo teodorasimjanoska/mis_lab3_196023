@@ -1,6 +1,6 @@
 
 import 'package:flutter/material.dart';
-import 'package:lab3_mis_196023/model/Termin.dart';
+import 'package:lab3_mis_196023/model/termin.dart';
 import 'package:lab3_mis_196023/screens/termin_details_screen.dart';
 
 class TerminTile extends StatelessWidget {

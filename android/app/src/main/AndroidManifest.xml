@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="mk.ukim.finki.lab3_mis_196023">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <application
         android:label="lab3_mis_196023"
         android:name="${applicationName}"
