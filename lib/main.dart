@@ -4,10 +4,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lab3_mis_196023/blocs/termini_bloc.dart';
 import 'package:lab3_mis_196023/blocs/termini_event.dart';
 import 'package:lab3_mis_196023/firebase_options.dart';
+import 'package:lab3_mis_196023/location_controller.dart';
 import 'package:lab3_mis_196023/repository/termin_repository.dart';
 import 'package:lab3_mis_196023/screens/auth_page.dart';
 import 'package:lab3_mis_196023/service/notif_service.dart';
 import 'package:timezone/data/latest.dart' as tz;
+import 'package:get/get.dart';
 
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +43,8 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    Get.put(LocationController());
+    return GetMaterialApp(
       title: 'Lab4 196023',
       theme: ThemeData(
         primarySwatch: Colors.lightBlue,
@@ -50,26 +53,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
-// this was in lab3
-
-// class MyApp extends StatelessWidget {
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return BlocProvider<TerminiBloc>(
-//       create: (BuildContext context) => TerminiBloc()..add(TerminiInitializedEvent()),
-//       child: MaterialApp(
-//         title: '196023 Lab3',
-//         theme: ThemeData(
-//           primarySwatch: Colors.blue,
-//         ),
-//         initialRoute: '/',
-//         routes: {
-//           '/': (ctx) => MainScreen(),
-//           TerminDetailsScreen.routeName: (ctx) => TerminDetailsScreen(),
-//         },
-//       ),
-//     );
-//   }
-// }

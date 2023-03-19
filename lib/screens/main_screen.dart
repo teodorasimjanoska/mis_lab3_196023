@@ -6,6 +6,7 @@ import 'package:lab3_mis_196023/blocs/termini_event.dart';
 import 'package:lab3_mis_196023/blocs/termini_state.dart';
 import 'package:lab3_mis_196023/model/termin.dart';
 import 'package:lab3_mis_196023/repository/termin_repository.dart';
+import 'package:lab3_mis_196023/widgets/add_location.dart';
 import 'package:lab3_mis_196023/widgets/appointments.dart';
 import 'package:lab3_mis_196023/widgets/nov_termin.dart';
 import 'package:lab3_mis_196023/widgets/termin_tile.dart';
@@ -18,7 +19,6 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-
   final _predmetController = TextEditingController();
   final _datumController = TextEditingController();
   final user = FirebaseAuth.instance.currentUser!;
@@ -58,44 +58,51 @@ class _MainScreenState extends State<MainScreen> {
       TerminAddedEvent(termin: termin),
     );
   }
-  //
-  // @override
-  // void initState() {
-  //   super.initState();
-  //   BlocProvider.of<TerminBloc>(context).add(GetData());
-  // }
 
   Widget _createBody(BuildContext context) {
     return Column(
-        children: [
-          Expanded(
-            child:
-                BlocBuilder<TerminBloc, TerminState>(builder: (context, state) {
-              if (state is TerminLoaded) {
-                List<Termin> termini = state.mydata;
-                return ListView.builder(
-                  itemCount: termini.length,
-                  itemBuilder: (_, index) {
-                    return TerminTile(
-                      termini[index],
-                      _deleteItem,
-                    );
-                  },
-                );
-              } else if (state is TerminLoading) {
-                return const Center(child: CircularProgressIndicator());
-              } else {
-                return const Center(
-                  child: Text("Nema termini"),
-                );
-              }
-            }),
+      children: [
+        Expanded(
+          child:
+              BlocBuilder<TerminBloc, TerminState>(builder: (context, state) {
+            if (state is TerminLoaded) {
+              List<Termin> termini = state.mydata;
+              return ListView.builder(
+                itemCount: termini.length,
+                itemBuilder: (_, index) {
+                  return TerminTile(
+                    termini[index],
+                    _deleteItem,
+                  );
+                },
+              );
+            } else if (state is TerminLoading) {
+              return const Center(child: CircularProgressIndicator());
+            } else {
+              return const Center(
+                child: Text("Nema termini"),
+              );
+            }
+          }),
+        ),
+        ElevatedButton(
+          child: Text(
+            "Dodadi lokacija",
           ),
-          Expanded(
-            child: _createCalendar(context),
-          ),
-        ],
-      );
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => AddLocation(),
+              ),
+            );
+          },
+        ),
+        Expanded(
+          child: _createCalendar(context),
+        ),
+      ],
+    );
   }
 
   Widget _createAppBar(BuildContext context) {
